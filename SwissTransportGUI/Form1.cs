@@ -7,9 +7,6 @@ namespace SwissTransportGUI
             InitializeComponent();
         }
 
-        private void verbindungssuchebtn_Click(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }
