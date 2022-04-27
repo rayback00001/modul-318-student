@@ -39,10 +39,18 @@ namespace SwissTransportGUI
         
         {
             List<Connection> List = itransport.GetConnections("Luzern", "Willisau").ConnectionList;
-            foreach (Connection Connection in List)
-            {
-                dataGridView1.Rows.Add(Connection.From.Station.Name, Connection.To.Station.Name, Connection.);
-            }
+          
+            
+           
+               foreach (Connection Connection in List)
+                {
+                    dataGridView1.Rows.Add(Connection.From.Station.Name, Connection.To.Station.Name, Connection.From.Departure, Connection.To.Arrival);
+                }
+
+            
+            
+
+
 
         }
     }

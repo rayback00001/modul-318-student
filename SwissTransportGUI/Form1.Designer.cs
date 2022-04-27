@@ -40,7 +40,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.startStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abreise = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ankunft = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,12 +125,13 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.startStation,
             this.endStation,
-            this.zeit});
-            this.dataGridView1.Location = new System.Drawing.Point(190, 374);
+            this.abreise,
+            this.ankunft});
+            this.dataGridView1.Location = new System.Drawing.Point(54, 374);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(690, 272);
+            this.dataGridView1.Size = new System.Drawing.Size(826, 272);
             this.dataGridView1.TabIndex = 11;
             // 
             // startStation
@@ -146,12 +148,19 @@
             this.endStation.MinimumWidth = 8;
             this.endStation.Name = "endStation";
             // 
-            // zeit
+            // abreise
             // 
-            this.zeit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.zeit.HeaderText = "Zeit";
-            this.zeit.MinimumWidth = 8;
-            this.zeit.Name = "zeit";
+            this.abreise.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.abreise.HeaderText = "Abreise";
+            this.abreise.MinimumWidth = 8;
+            this.abreise.Name = "abreise";
+            // 
+            // ankunft
+            // 
+            this.ankunft.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ankunft.HeaderText = "Ankunft";
+            this.ankunft.MinimumWidth = 8;
+            this.ankunft.Name = "ankunft";
             // 
             // Form1
             // 
@@ -186,6 +195,7 @@
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn startStation;
         private DataGridViewTextBoxColumn endStation;
-        private DataGridViewTextBoxColumn zeit;
+        private DataGridViewTextBoxColumn abreise;
+        private DataGridViewTextBoxColumn ankunft;
     }
 }
