@@ -24,7 +24,7 @@ namespace SwissTransportUI
         private void sucheVerbindungButton_Click(object sender, EventArgs e)
         {
 
-
+            /*
             try
             {
                 var station = transport.GetStations(vonInputcmbx.Text);
@@ -49,12 +49,17 @@ namespace SwissTransportUI
                 MessageBox.Show("Hallo");
             }
 
+            */
 
-            List<Connection> List = transport.GetConnections(vonInputcmbx.Text,nachInputcmbx.Text).ConnectionList;
-            
+
+
            
             try
             {
+
+                var List = transport.GetConnections(vonInputcmbx.Text, nachInputcmbx.Text).ConnectionList;
+               
+          
                 foreach (Connection connection in List)
                 {
 
@@ -64,13 +69,18 @@ namespace SwissTransportUI
                 }
             }
             
+            catch(ArgumentNullException)
 
-            catch(HttpRequestException)
             {
-                MessageBox.Show("h");
+                MessageBox.Show("Ortsnamen vollständig und korrekt eingeben!");
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message, "Fehlermeldung", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            
+
+
 
 
         }

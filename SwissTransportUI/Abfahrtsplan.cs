@@ -25,8 +25,9 @@ namespace SwissTransportUI
 
             var List = transport.GetStationBoard(ortInputButton.Text, ortInputButton.Text);
 
-           
-            
+
+            try
+            {
                 if (ortInputButton.Text == List.Station.Name)
                 {
                     foreach (StationBoard sb in List.Entries)
@@ -39,14 +40,17 @@ namespace SwissTransportUI
                 {
                     MessageBox.Show("Bitte richtigen Ortsnamen eingeben");
                 }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Fehlermeldung", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             
 
-            
-            
-               
-            
 
-            
+
+
+
 
         }
 

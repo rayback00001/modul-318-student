@@ -83,6 +83,7 @@
             // 
             // verbindungSucheDatagrid
             // 
+            this.verbindungSucheDatagrid.BackgroundColor = System.Drawing.Color.White;
             this.verbindungSucheDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.verbindungSucheDatagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.startStation,
@@ -90,6 +91,7 @@
             this.abreise,
             this.ankunft,
             this.gleis});
+            this.verbindungSucheDatagrid.GridColor = System.Drawing.Color.White;
             this.verbindungSucheDatagrid.Location = new System.Drawing.Point(1, 284);
             this.verbindungSucheDatagrid.Name = "verbindungSucheDatagrid";
             this.verbindungSucheDatagrid.RowHeadersVisible = false;
@@ -162,9 +164,9 @@
             this.verbindungSuchenLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(78)))), ((int)(((byte)(142)))));
             this.verbindungSuchenLabel.Location = new System.Drawing.Point(44, 28);
             this.verbindungSuchenLabel.Name = "verbindungSuchenLabel";
-            this.verbindungSuchenLabel.Size = new System.Drawing.Size(356, 48);
+            this.verbindungSuchenLabel.Size = new System.Drawing.Size(360, 48);
             this.verbindungSuchenLabel.TabIndex = 6;
-            this.verbindungSuchenLabel.Text = "Verbindung suchen";
+            this.verbindungSuchenLabel.Text = "Verbindung Suchen";
             // 
             // VerbindungSuchen
             // 
