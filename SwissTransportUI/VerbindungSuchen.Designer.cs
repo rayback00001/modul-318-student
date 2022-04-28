@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sucheVerbindungButton = new System.Windows.Forms.Button();
             this.vonInputcmbx = new System.Windows.Forms.ComboBox();
             this.nachInputcmbx = new System.Windows.Forms.ComboBox();
             this.verbindungSucheDatagrid = new System.Windows.Forms.DataGridView();
+            this.vonLabel = new System.Windows.Forms.Label();
+            this.nachLabel = new System.Windows.Forms.Label();
+            this.verbindungSuchenLabel = new System.Windows.Forms.Label();
             this.startStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abreise = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ankunft = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vonLabel = new System.Windows.Forms.Label();
-            this.nachLabel = new System.Windows.Forms.Label();
-            this.verbindungSuchenLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.verbindungSucheDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +86,15 @@
             // verbindungSucheDatagrid
             // 
             this.verbindungSucheDatagrid.BackgroundColor = System.Drawing.Color.White;
+            this.verbindungSucheDatagrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(153)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(153)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.verbindungSucheDatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.verbindungSucheDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.verbindungSucheDatagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.startStation,
@@ -91,6 +102,7 @@
             this.abreise,
             this.ankunft,
             this.gleis});
+            this.verbindungSucheDatagrid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.verbindungSucheDatagrid.GridColor = System.Drawing.Color.White;
             this.verbindungSucheDatagrid.Location = new System.Drawing.Point(1, 284);
             this.verbindungSucheDatagrid.Name = "verbindungSucheDatagrid";
@@ -99,41 +111,6 @@
             this.verbindungSucheDatagrid.RowTemplate.Height = 33;
             this.verbindungSucheDatagrid.Size = new System.Drawing.Size(906, 270);
             this.verbindungSucheDatagrid.TabIndex = 4;
-            // 
-            // startStation
-            // 
-            this.startStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.startStation.HeaderText = "Startstation";
-            this.startStation.MinimumWidth = 8;
-            this.startStation.Name = "startStation";
-            // 
-            // endStation
-            // 
-            this.endStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.endStation.HeaderText = "Endstation";
-            this.endStation.MinimumWidth = 8;
-            this.endStation.Name = "endStation";
-            // 
-            // abreise
-            // 
-            this.abreise.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.abreise.HeaderText = "Abreise";
-            this.abreise.MinimumWidth = 8;
-            this.abreise.Name = "abreise";
-            // 
-            // ankunft
-            // 
-            this.ankunft.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ankunft.HeaderText = "Ankunft";
-            this.ankunft.MinimumWidth = 8;
-            this.ankunft.Name = "ankunft";
-            // 
-            // gleis
-            // 
-            this.gleis.HeaderText = "Gleis";
-            this.gleis.MinimumWidth = 8;
-            this.gleis.Name = "gleis";
-            this.gleis.Width = 150;
             // 
             // vonLabel
             // 
@@ -168,6 +145,48 @@
             this.verbindungSuchenLabel.TabIndex = 6;
             this.verbindungSuchenLabel.Text = "Verbindung Suchen";
             // 
+            // startStation
+            // 
+            this.startStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.startStation.DefaultCellStyle = dataGridViewCellStyle2;
+            this.startStation.FillWeight = 110F;
+            this.startStation.HeaderText = "Startstation";
+            this.startStation.MinimumWidth = 110;
+            this.startStation.Name = "startStation";
+            // 
+            // endStation
+            // 
+            this.endStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.endStation.FillWeight = 110F;
+            this.endStation.HeaderText = "Endstation";
+            this.endStation.MinimumWidth = 110;
+            this.endStation.Name = "endStation";
+            // 
+            // abreise
+            // 
+            this.abreise.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.abreise.FillWeight = 110F;
+            this.abreise.HeaderText = "Abreise";
+            this.abreise.MinimumWidth = 110;
+            this.abreise.Name = "abreise";
+            // 
+            // ankunft
+            // 
+            this.ankunft.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ankunft.FillWeight = 110F;
+            this.ankunft.HeaderText = "Ankunft";
+            this.ankunft.MinimumWidth = 110;
+            this.ankunft.Name = "ankunft";
+            // 
+            // gleis
+            // 
+            this.gleis.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gleis.FillWeight = 110F;
+            this.gleis.HeaderText = "Gleis";
+            this.gleis.MinimumWidth = 110;
+            this.gleis.Name = "gleis";
+            // 
             // VerbindungSuchen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -198,13 +217,13 @@
         private ComboBox vonInputcmbx;
         private ComboBox nachInputcmbx;
         private DataGridView verbindungSucheDatagrid;
+        private Label vonLabel;
+        private Label nachLabel;
+        private Label verbindungSuchenLabel;
         private DataGridViewTextBoxColumn startStation;
         private DataGridViewTextBoxColumn endStation;
         private DataGridViewTextBoxColumn abreise;
         private DataGridViewTextBoxColumn ankunft;
-        private Label vonLabel;
-        private Label nachLabel;
         private DataGridViewTextBoxColumn gleis;
-        private Label verbindungSuchenLabel;
     }
 }
