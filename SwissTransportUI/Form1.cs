@@ -17,6 +17,7 @@ namespace SwissTransportUI
            
             VerbindungSuchen vs = new VerbindungSuchen();
             vs.Show();
+            this.Hide();
             
             
         }

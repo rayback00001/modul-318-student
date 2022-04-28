@@ -60,6 +60,7 @@
             this.ortInputButton.Name = "ortInputButton";
             this.ortInputButton.Size = new System.Drawing.Size(182, 33);
             this.ortInputButton.TabIndex = 5;
+            this.ortInputButton.SelectedIndexChanged += new System.EventHandler(this.ortInputButton_SelectedIndexChanged);
             // 
             // abfahrtsPlanAnzButton
             // 

@@ -30,7 +30,7 @@ namespace SwissTransportUI
                 {
                     foreach (StationBoard sb in List.Entries)
                     {
-                        abfahrtsPlanDatagrid.Rows.Add(List.Station.Name, sb.To, sb.Stop.Departure);
+                        abfahrtsPlanDatagrid.Rows.Add(List.Station.Name, sb.To, string.Format("{0:HH:mm}",sb.Stop.Departure));
                     }
                 }
 
@@ -42,10 +42,11 @@ namespace SwissTransportUI
 
             
 
-
-            
-            
         }
-        
+
+        private void ortInputButton_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+        }
     }
 }
