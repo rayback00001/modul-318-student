@@ -34,14 +34,18 @@
             this.abfahrtsplanbtn = new System.Windows.Forms.Button();
             this.verbindungSuchenbtn = new System.Windows.Forms.Button();
             this.stationSuchenbtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.sucheVerbindungbtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.startStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abreise = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ankunft = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nachInputcmbx = new System.Windows.Forms.ComboBox();
+            this.vonInputcmbx = new System.Windows.Forms.ComboBox();
+            this.vonlabel = new System.Windows.Forms.Label();
+            this.nachlabel = new System.Windows.Forms.Label();
+            this.abfahrtstafelUserControl1 = new SwissTransportGUI.AbfahrtstafelUserControl();
+            this.stationSucheUserControl1 = new SwissTransportGUI.StationSucheUserControl();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +66,7 @@
             // abfahrtsplanbtn
             // 
             this.abfahrtsplanbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.abfahrtsplanbtn.Location = new System.Drawing.Point(673, 113);
+            this.abfahrtsplanbtn.Location = new System.Drawing.Point(663, 114);
             this.abfahrtsplanbtn.Name = "abfahrtsplanbtn";
             this.abfahrtsplanbtn.Size = new System.Drawing.Size(255, 70);
             this.abfahrtsplanbtn.TabIndex = 3;
@@ -73,7 +77,7 @@
             // verbindungSuchenbtn
             // 
             this.verbindungSuchenbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.verbindungSuchenbtn.Location = new System.Drawing.Point(151, 113);
+            this.verbindungSuchenbtn.Location = new System.Drawing.Point(141, 114);
             this.verbindungSuchenbtn.Name = "verbindungSuchenbtn";
             this.verbindungSuchenbtn.Size = new System.Drawing.Size(255, 70);
             this.verbindungSuchenbtn.TabIndex = 1;
@@ -84,7 +88,7 @@
             // stationSuchenbtn
             // 
             this.stationSuchenbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stationSuchenbtn.Location = new System.Drawing.Point(412, 113);
+            this.stationSuchenbtn.Location = new System.Drawing.Point(402, 114);
             this.stationSuchenbtn.Name = "stationSuchenbtn";
             this.stationSuchenbtn.Size = new System.Drawing.Size(255, 70);
             this.stationSuchenbtn.TabIndex = 2;
@@ -92,31 +96,16 @@
             this.stationSuchenbtn.UseVisualStyleBackColor = true;
             this.stationSuchenbtn.Click += new System.EventHandler(this.stationSuchenbtn_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(190, 233);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 50);
-            this.textBox1.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(572, 233);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(308, 50);
-            this.textBox2.TabIndex = 9;
-            // 
             // sucheVerbindungbtn
             // 
             this.sucheVerbindungbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sucheVerbindungbtn.Location = new System.Drawing.Point(702, 289);
+            this.sucheVerbindungbtn.Location = new System.Drawing.Point(679, 280);
             this.sucheVerbindungbtn.Name = "sucheVerbindungbtn";
-            this.sucheVerbindungbtn.Size = new System.Drawing.Size(178, 51);
-            this.sucheVerbindungbtn.TabIndex = 10;
+            this.sucheVerbindungbtn.Size = new System.Drawing.Size(178, 40);
+            this.sucheVerbindungbtn.TabIndex = 6;
             this.sucheVerbindungbtn.Text = "Suche Verbindung";
             this.sucheVerbindungbtn.UseVisualStyleBackColor = true;
+            this.sucheVerbindungbtn.TabIndexChanged += new System.EventHandler(this.nachInputcmbx_SelectedIndexChanged);
             this.sucheVerbindungbtn.Click += new System.EventHandler(this.sucheVerbindungbtn_Click);
             // 
             // dataGridView1
@@ -127,7 +116,7 @@
             this.endStation,
             this.abreise,
             this.ankunft});
-            this.dataGridView1.Location = new System.Drawing.Point(54, 374);
+            this.dataGridView1.Location = new System.Drawing.Point(120, 373);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 33;
@@ -162,21 +151,78 @@
             this.ankunft.MinimumWidth = 8;
             this.ankunft.Name = "ankunft";
             // 
+            // nachInputcmbx
+            // 
+            this.nachInputcmbx.FormattingEnabled = true;
+            this.nachInputcmbx.Location = new System.Drawing.Point(603, 232);
+            this.nachInputcmbx.Name = "nachInputcmbx";
+            this.nachInputcmbx.Size = new System.Drawing.Size(254, 33);
+            this.nachInputcmbx.TabIndex = 5;
+            this.nachInputcmbx.SelectedIndexChanged += new System.EventHandler(this.nachInputcmbx_SelectedIndexChanged);
+            this.nachInputcmbx.TabIndexChanged += new System.EventHandler(this.sucheVerbindungbtn_Click);
+            // 
+            // vonInputcmbx
+            // 
+            this.vonInputcmbx.FormattingEnabled = true;
+            this.vonInputcmbx.Location = new System.Drawing.Point(236, 232);
+            this.vonInputcmbx.Name = "vonInputcmbx";
+            this.vonInputcmbx.Size = new System.Drawing.Size(254, 33);
+            this.vonInputcmbx.TabIndex = 4;
+            this.vonInputcmbx.SelectedIndexChanged += new System.EventHandler(this.vonInputcmbx_SelectedIndexChanged);
+            this.vonInputcmbx.TabIndexChanged += new System.EventHandler(this.nachInputcmbx_SelectedIndexChanged);
+            // 
+            // vonlabel
+            // 
+            this.vonlabel.AutoSize = true;
+            this.vonlabel.Location = new System.Drawing.Point(183, 235);
+            this.vonlabel.Name = "vonlabel";
+            this.vonlabel.Size = new System.Drawing.Size(47, 25);
+            this.vonlabel.TabIndex = 12;
+            this.vonlabel.Text = "Von:";
+            // 
+            // nachlabel
+            // 
+            this.nachlabel.AutoSize = true;
+            this.nachlabel.Location = new System.Drawing.Point(541, 235);
+            this.nachlabel.Name = "nachlabel";
+            this.nachlabel.Size = new System.Drawing.Size(56, 25);
+            this.nachlabel.TabIndex = 13;
+            this.nachlabel.Text = "Nach:";
+            // 
+            // abfahrtstafelUserControl1
+            // 
+            this.abfahrtstafelUserControl1.Location = new System.Drawing.Point(83, 210);
+            this.abfahrtstafelUserControl1.Name = "abfahrtstafelUserControl1";
+            this.abfahrtstafelUserControl1.Size = new System.Drawing.Size(899, 451);
+            this.abfahrtstafelUserControl1.TabIndex = 14;
+            // 
+            // stationSucheUserControl1
+            // 
+            this.stationSucheUserControl1.Location = new System.Drawing.Point(83, 210);
+            this.stationSucheUserControl1.Name = "stationSucheUserControl1";
+            this.stationSucheUserControl1.Size = new System.Drawing.Size(899, 451);
+            this.stationSucheUserControl1.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1046, 673);
+            this.Controls.Add(this.stationSucheUserControl1);
+            this.Controls.Add(this.abfahrtstafelUserControl1);
+            this.Controls.Add(this.nachlabel);
+            this.Controls.Add(this.vonlabel);
+            this.Controls.Add(this.vonInputcmbx);
+            this.Controls.Add(this.nachInputcmbx);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.sucheVerbindungbtn);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.abfahrtsplanbtn);
             this.Controls.Add(this.stationSuchenbtn);
             this.Controls.Add(this.verbindungSuchenbtn);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "ÖV-App";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,13 +235,17 @@
         private Button abfahrtsplanbtn;
         private Button verbindungSuchenbtn;
         private Button stationSuchenbtn;
-        private TextBox textBox1;
-        private TextBox textBox2;
         private Button sucheVerbindungbtn;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn startStation;
         private DataGridViewTextBoxColumn endStation;
         private DataGridViewTextBoxColumn abreise;
         private DataGridViewTextBoxColumn ankunft;
+        private ComboBox nachInputcmbx;
+        private ComboBox vonInputcmbx;
+        private Label vonlabel;
+        private Label nachlabel;
+        private AbfahrtstafelUserControl abfahrtstafelUserControl1;
+        private StationSucheUserControl stationSucheUserControl1;
     }
 }

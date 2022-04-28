@@ -8,17 +8,27 @@ using SwissTransport.Models;
 
 namespace SwissTransportGUI
 {
-    
+
+
+
     internal class Verbindungen
     {
+       
+
+
+       
+
         
 
 
 
 
-     
 
-      
+
+
+
+
 
     }
+
 }
