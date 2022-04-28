@@ -25,12 +25,13 @@ namespace SwissTransportUI
 
             var List = transport.GetStationBoard(ortInputButton.Text, ortInputButton.Text);
 
-            
+            try
+            {
                 if (ortInputButton.Text == List.Station.Name)
                 {
                     foreach (StationBoard sb in List.Entries)
                     {
-                        abfahrtsPlanDatagrid.Rows.Add(List.Station.Name, sb.To, string.Format("{0:HH:mm}",sb.Stop.Departure));
+                        abfahrtsPlanDatagrid.Rows.Add(List.Station.Name, sb.To, string.Format("{0:HH:mm}", sb.Stop.Departure));
                     }
                 }
 
@@ -38,6 +39,14 @@ namespace SwissTransportUI
                 {
                     MessageBox.Show("Bitte richtigen Ortsnamen eingeben");
                 }
+            }
+
+            catch(ArgumentNullException)
+            {
+                MessageBox.Show("Geben Sie einen Wert ein");
+            }
+            
+               
             
 
             
