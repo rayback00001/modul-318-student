@@ -35,7 +35,7 @@
             this.verbindungSuchenbtn = new System.Windows.Forms.Button();
             this.stationSuchenbtn = new System.Windows.Forms.Button();
             this.sucheVerbindungbtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Verbindungendatagrid = new System.Windows.Forms.DataGridView();
             this.startStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abreise = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,9 +44,8 @@
             this.vonInputcmbx = new System.Windows.Forms.ComboBox();
             this.vonlabel = new System.Windows.Forms.Label();
             this.nachlabel = new System.Windows.Forms.Label();
-            this.abfahrtstafelUserControl1 = new SwissTransportGUI.AbfahrtstafelUserControl();
-            this.stationSucheUserControl1 = new SwissTransportGUI.StationSucheUserControl();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.Verbindungendatagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,20 +107,22 @@
             this.sucheVerbindungbtn.TabIndexChanged += new System.EventHandler(this.nachInputcmbx_SelectedIndexChanged);
             this.sucheVerbindungbtn.Click += new System.EventHandler(this.sucheVerbindungbtn_Click);
             // 
-            // dataGridView1
+            // Verbindungendatagrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Verbindungendatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Verbindungendatagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.startStation,
             this.endStation,
             this.abreise,
-            this.ankunft});
-            this.dataGridView1.Location = new System.Drawing.Point(120, 373);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(826, 272);
-            this.dataGridView1.TabIndex = 11;
+            this.ankunft,
+            this.gleis});
+            this.Verbindungendatagrid.Location = new System.Drawing.Point(120, 373);
+            this.Verbindungendatagrid.Name = "Verbindungendatagrid";
+            this.Verbindungendatagrid.RowHeadersVisible = false;
+            this.Verbindungendatagrid.RowHeadersWidth = 62;
+            this.Verbindungendatagrid.RowTemplate.Height = 33;
+            this.Verbindungendatagrid.Size = new System.Drawing.Size(826, 272);
+            this.Verbindungendatagrid.TabIndex = 11;
             // 
             // startStation
             // 
@@ -189,32 +190,23 @@
             this.nachlabel.TabIndex = 13;
             this.nachlabel.Text = "Nach:";
             // 
-            // abfahrtstafelUserControl1
+            // gleis
             // 
-            this.abfahrtstafelUserControl1.Location = new System.Drawing.Point(83, 210);
-            this.abfahrtstafelUserControl1.Name = "abfahrtstafelUserControl1";
-            this.abfahrtstafelUserControl1.Size = new System.Drawing.Size(899, 451);
-            this.abfahrtstafelUserControl1.TabIndex = 14;
-            // 
-            // stationSucheUserControl1
-            // 
-            this.stationSucheUserControl1.Location = new System.Drawing.Point(83, 210);
-            this.stationSucheUserControl1.Name = "stationSucheUserControl1";
-            this.stationSucheUserControl1.Size = new System.Drawing.Size(899, 451);
-            this.stationSucheUserControl1.TabIndex = 15;
+            this.gleis.HeaderText = "Gleis";
+            this.gleis.MinimumWidth = 8;
+            this.gleis.Name = "gleis";
+            this.gleis.Width = 150;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1046, 673);
-            this.Controls.Add(this.stationSucheUserControl1);
-            this.Controls.Add(this.abfahrtstafelUserControl1);
             this.Controls.Add(this.nachlabel);
             this.Controls.Add(this.vonlabel);
             this.Controls.Add(this.vonInputcmbx);
             this.Controls.Add(this.nachInputcmbx);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Verbindungendatagrid);
             this.Controls.Add(this.sucheVerbindungbtn);
             this.Controls.Add(this.abfahrtsplanbtn);
             this.Controls.Add(this.stationSuchenbtn);
@@ -223,7 +215,7 @@
             this.Name = "Form1";
             this.Text = "ÖV-App";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Verbindungendatagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,7 +228,7 @@
         private Button verbindungSuchenbtn;
         private Button stationSuchenbtn;
         private Button sucheVerbindungbtn;
-        private DataGridView dataGridView1;
+        private DataGridView Verbindungendatagrid;
         private DataGridViewTextBoxColumn startStation;
         private DataGridViewTextBoxColumn endStation;
         private DataGridViewTextBoxColumn abreise;
@@ -245,7 +237,6 @@
         private ComboBox vonInputcmbx;
         private Label vonlabel;
         private Label nachlabel;
-        private AbfahrtstafelUserControl abfahrtstafelUserControl1;
-        private StationSucheUserControl stationSucheUserControl1;
+        private DataGridViewTextBoxColumn gleis;
     }
 }
