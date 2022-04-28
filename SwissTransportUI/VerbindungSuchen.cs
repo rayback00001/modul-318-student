@@ -89,10 +89,11 @@ namespace SwissTransportUI
 
         }
 
-        private void vonInputcmbx_SelectedIndexChanged(object sender, EventArgs e)
+        private void zurueckButton_Click(object sender, EventArgs e)
         {
-
-           
+            menueForms mf = new menueForms();
+            mf.Show();
+            this.Close();
         }
     }
 }

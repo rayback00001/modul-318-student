@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.abfahrtsPlanDatagrid = new System.Windows.Forms.DataGridView();
             this.startStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,11 +42,21 @@
             // 
             // abfahrtsPlanDatagrid
             // 
+            this.abfahrtsPlanDatagrid.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.abfahrtsPlanDatagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.abfahrtsPlanDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.abfahrtsPlanDatagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.startStation,
             this.endStation,
             this.abreise});
+            this.abfahrtsPlanDatagrid.GridColor = System.Drawing.SystemColors.GrayText;
             this.abfahrtsPlanDatagrid.Location = new System.Drawing.Point(0, 214);
             this.abfahrtsPlanDatagrid.Name = "abfahrtsPlanDatagrid";
             this.abfahrtsPlanDatagrid.RowHeadersVisible = false;

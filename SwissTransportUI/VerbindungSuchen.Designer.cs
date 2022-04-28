@@ -34,14 +34,15 @@
             this.vonInputcmbx = new System.Windows.Forms.ComboBox();
             this.nachInputcmbx = new System.Windows.Forms.ComboBox();
             this.verbindungSucheDatagrid = new System.Windows.Forms.DataGridView();
-            this.vonLabel = new System.Windows.Forms.Label();
-            this.nachLabel = new System.Windows.Forms.Label();
-            this.verbindungSuchenLabel = new System.Windows.Forms.Label();
             this.startStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abreise = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ankunft = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vonLabel = new System.Windows.Forms.Label();
+            this.nachLabel = new System.Windows.Forms.Label();
+            this.verbindungSuchenLabel = new System.Windows.Forms.Label();
+            this.zurueckButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.verbindungSucheDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +71,6 @@
             this.vonInputcmbx.Name = "vonInputcmbx";
             this.vonInputcmbx.Size = new System.Drawing.Size(278, 56);
             this.vonInputcmbx.TabIndex = 1;
-            this.vonInputcmbx.SelectedIndexChanged += new System.EventHandler(this.vonInputcmbx_SelectedIndexChanged);
             // 
             // nachInputcmbx
             // 
@@ -86,6 +86,7 @@
             // verbindungSucheDatagrid
             // 
             this.verbindungSucheDatagrid.BackgroundColor = System.Drawing.Color.White;
+            this.verbindungSucheDatagrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.verbindungSucheDatagrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -103,47 +104,14 @@
             this.ankunft,
             this.gleis});
             this.verbindungSucheDatagrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.verbindungSucheDatagrid.GridColor = System.Drawing.Color.White;
-            this.verbindungSucheDatagrid.Location = new System.Drawing.Point(1, 284);
+            this.verbindungSucheDatagrid.GridColor = System.Drawing.SystemColors.GrayText;
+            this.verbindungSucheDatagrid.Location = new System.Drawing.Point(-2, 314);
             this.verbindungSucheDatagrid.Name = "verbindungSucheDatagrid";
             this.verbindungSucheDatagrid.RowHeadersVisible = false;
             this.verbindungSucheDatagrid.RowHeadersWidth = 62;
             this.verbindungSucheDatagrid.RowTemplate.Height = 33;
-            this.verbindungSucheDatagrid.Size = new System.Drawing.Size(906, 270);
+            this.verbindungSucheDatagrid.Size = new System.Drawing.Size(914, 242);
             this.verbindungSucheDatagrid.TabIndex = 4;
-            // 
-            // vonLabel
-            // 
-            this.vonLabel.AutoSize = true;
-            this.vonLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.vonLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.vonLabel.Location = new System.Drawing.Point(51, 131);
-            this.vonLabel.Name = "vonLabel";
-            this.vonLabel.Size = new System.Drawing.Size(65, 32);
-            this.vonLabel.TabIndex = 4;
-            this.vonLabel.Text = "Von:";
-            // 
-            // nachLabel
-            // 
-            this.nachLabel.AutoSize = true;
-            this.nachLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.nachLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.nachLabel.Location = new System.Drawing.Point(457, 131);
-            this.nachLabel.Name = "nachLabel";
-            this.nachLabel.Size = new System.Drawing.Size(79, 32);
-            this.nachLabel.TabIndex = 5;
-            this.nachLabel.Text = "Nach:";
-            // 
-            // verbindungSuchenLabel
-            // 
-            this.verbindungSuchenLabel.AutoSize = true;
-            this.verbindungSuchenLabel.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.verbindungSuchenLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(78)))), ((int)(((byte)(142)))));
-            this.verbindungSuchenLabel.Location = new System.Drawing.Point(44, 28);
-            this.verbindungSuchenLabel.Name = "verbindungSuchenLabel";
-            this.verbindungSuchenLabel.Size = new System.Drawing.Size(360, 48);
-            this.verbindungSuchenLabel.TabIndex = 6;
-            this.verbindungSuchenLabel.Text = "Verbindung Suchen";
             // 
             // startStation
             // 
@@ -187,12 +155,58 @@
             this.gleis.MinimumWidth = 110;
             this.gleis.Name = "gleis";
             // 
+            // vonLabel
+            // 
+            this.vonLabel.AutoSize = true;
+            this.vonLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.vonLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vonLabel.Location = new System.Drawing.Point(51, 131);
+            this.vonLabel.Name = "vonLabel";
+            this.vonLabel.Size = new System.Drawing.Size(65, 32);
+            this.vonLabel.TabIndex = 4;
+            this.vonLabel.Text = "Von:";
+            // 
+            // nachLabel
+            // 
+            this.nachLabel.AutoSize = true;
+            this.nachLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nachLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.nachLabel.Location = new System.Drawing.Point(457, 131);
+            this.nachLabel.Name = "nachLabel";
+            this.nachLabel.Size = new System.Drawing.Size(79, 32);
+            this.nachLabel.TabIndex = 5;
+            this.nachLabel.Text = "Nach:";
+            // 
+            // verbindungSuchenLabel
+            // 
+            this.verbindungSuchenLabel.AutoSize = true;
+            this.verbindungSuchenLabel.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.verbindungSuchenLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(78)))), ((int)(((byte)(142)))));
+            this.verbindungSuchenLabel.Location = new System.Drawing.Point(40, 41);
+            this.verbindungSuchenLabel.Name = "verbindungSuchenLabel";
+            this.verbindungSuchenLabel.Size = new System.Drawing.Size(360, 48);
+            this.verbindungSuchenLabel.TabIndex = 6;
+            this.verbindungSuchenLabel.Text = "Verbindung Suchen";
+            // 
+            // zurueckButton
+            // 
+            this.zurueckButton.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.zurueckButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.zurueckButton.Location = new System.Drawing.Point(674, 12);
+            this.zurueckButton.Name = "zurueckButton";
+            this.zurueckButton.Size = new System.Drawing.Size(146, 38);
+            this.zurueckButton.TabIndex = 7;
+            this.zurueckButton.Text = "Menü";
+            this.zurueckButton.UseVisualStyleBackColor = false;
+            this.zurueckButton.Click += new System.EventHandler(this.zurueckButton_Click);
+            // 
             // VerbindungSuchen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(907, 553);
+            this.Controls.Add(this.zurueckButton);
             this.Controls.Add(this.verbindungSuchenLabel);
             this.Controls.Add(this.nachLabel);
             this.Controls.Add(this.vonLabel);
@@ -225,5 +239,6 @@
         private DataGridViewTextBoxColumn abreise;
         private DataGridViewTextBoxColumn ankunft;
         private DataGridViewTextBoxColumn gleis;
+        private Button zurueckButton;
     }
 }
