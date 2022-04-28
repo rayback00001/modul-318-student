@@ -26,19 +26,26 @@ namespace SwissTransportUI
             var List = transport.GetStationBoard(ortInputButton.Text, ortInputButton.Text);
 
             
-
-            if(ortInputButton.Text == List.Station.Name)
-            {
-                foreach (StationBoard sb in List.Entries)
+                if (ortInputButton.Text == List.Station.Name)
                 {
-                    abfahrtsPlanDatagrid.Rows.Add(List.Station.Name, sb.Stop.Departure);
+                    foreach (StationBoard sb in List.Entries)
+                    {
+                        abfahrtsPlanDatagrid.Rows.Add(List.Station.Name, sb.To, sb.Stop.Departure);
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("rICHI");
-            }
 
+                else
+                {
+                    MessageBox.Show("Bitte richtigen Ortsnamen eingeben");
+                }
+            
+
+            
+
+
+            
+            
         }
+        
     }
 }
