@@ -55,6 +55,8 @@
             // 
             // vonInputcmbx
             // 
+            this.vonInputcmbx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.vonInputcmbx.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.vonInputcmbx.FormattingEnabled = true;
             this.vonInputcmbx.Location = new System.Drawing.Point(120, 82);
             this.vonInputcmbx.Name = "vonInputcmbx";

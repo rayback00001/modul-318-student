@@ -25,11 +25,11 @@ namespace SwissTransportUI
         {
             List<Connection> List = transport.GetConnections(vonInputcmbx.Text,nachInputcmbx.Text).ConnectionList;
 
-
-            foreach (Connection Connection in List)
+           
+            foreach (Connection connection in List)
             {
 
-                verbindungSucheDatagrid.Rows.Add(Connection.From.Station.Name, Connection.To.Station.Name, Connection.From.Departure, Connection.To.Arrival, Connection.To.Platform);
+                verbindungSucheDatagrid.Rows.Add(connection.From.Station.Name, connection.To.Station.Name, connection.From.Departure, connection.To.Arrival, connection.To.Platform);
 
             }
         }
