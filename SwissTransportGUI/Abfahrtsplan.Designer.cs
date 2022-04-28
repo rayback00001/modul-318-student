@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.vonlabel = new System.Windows.Forms.Label();
+            this.ortlabel = new System.Windows.Forms.Label();
             this.ortInputcmbx = new System.Windows.Forms.ComboBox();
             this.abfahrtsPlanShowbtn = new System.Windows.Forms.Button();
             this.abfahrtPlandatagrid = new System.Windows.Forms.DataGridView();
@@ -39,19 +39,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.abfahrtPlandatagrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // vonlabel
+            // ortlabel
             // 
-            this.vonlabel.AutoSize = true;
-            this.vonlabel.Location = new System.Drawing.Point(208, 201);
-            this.vonlabel.Name = "vonlabel";
-            this.vonlabel.Size = new System.Drawing.Size(47, 25);
-            this.vonlabel.TabIndex = 14;
-            this.vonlabel.Text = "Von:";
+            this.ortlabel.AutoSize = true;
+            this.ortlabel.Location = new System.Drawing.Point(106, 85);
+            this.ortlabel.Name = "ortlabel";
+            this.ortlabel.Size = new System.Drawing.Size(42, 25);
+            this.ortlabel.TabIndex = 14;
+            this.ortlabel.Text = "Ort:";
             // 
             // ortInputcmbx
             // 
             this.ortInputcmbx.FormattingEnabled = true;
-            this.ortInputcmbx.Location = new System.Drawing.Point(261, 198);
+            this.ortInputcmbx.Location = new System.Drawing.Point(159, 77);
             this.ortInputcmbx.Name = "ortInputcmbx";
             this.ortInputcmbx.Size = new System.Drawing.Size(254, 33);
             this.ortInputcmbx.TabIndex = 13;
@@ -59,9 +59,9 @@
             // abfahrtsPlanShowbtn
             // 
             this.abfahrtsPlanShowbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.abfahrtsPlanShowbtn.Location = new System.Drawing.Point(562, 198);
+            this.abfahrtsPlanShowbtn.Location = new System.Drawing.Point(159, 116);
             this.abfahrtsPlanShowbtn.Name = "abfahrtsPlanShowbtn";
-            this.abfahrtsPlanShowbtn.Size = new System.Drawing.Size(244, 40);
+            this.abfahrtsPlanShowbtn.Size = new System.Drawing.Size(254, 40);
             this.abfahrtsPlanShowbtn.TabIndex = 15;
             this.abfahrtsPlanShowbtn.Text = "Abfahrtsplan anzeigen";
             this.abfahrtsPlanShowbtn.UseVisualStyleBackColor = true;
@@ -75,12 +75,12 @@
             this.endStation,
             this.abreise,
             this.ankunft});
-            this.abfahrtPlandatagrid.Location = new System.Drawing.Point(106, 341);
+            this.abfahrtPlandatagrid.Location = new System.Drawing.Point(106, 231);
             this.abfahrtPlandatagrid.Name = "abfahrtPlandatagrid";
             this.abfahrtPlandatagrid.RowHeadersVisible = false;
             this.abfahrtPlandatagrid.RowHeadersWidth = 62;
             this.abfahrtPlandatagrid.RowTemplate.Height = 33;
-            this.abfahrtPlandatagrid.Size = new System.Drawing.Size(810, 272);
+            this.abfahrtPlandatagrid.Size = new System.Drawing.Size(810, 382);
             this.abfahrtPlandatagrid.TabIndex = 16;
             // 
             // startStation
@@ -118,7 +118,7 @@
             this.ClientSize = new System.Drawing.Size(1046, 673);
             this.Controls.Add(this.abfahrtPlandatagrid);
             this.Controls.Add(this.abfahrtsPlanShowbtn);
-            this.Controls.Add(this.vonlabel);
+            this.Controls.Add(this.ortlabel);
             this.Controls.Add(this.ortInputcmbx);
             this.Name = "Abfahrtsplan";
             this.Text = "Abfahrtsplan";
@@ -130,7 +130,7 @@
 
         #endregion
 
-        private Label vonlabel;
+        private Label ortlabel;
         private ComboBox ortInputcmbx;
         private Button abfahrtsPlanShowbtn;
         private DataGridView abfahrtPlandatagrid;

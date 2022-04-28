@@ -28,7 +28,7 @@ namespace SwissTransportGUI
 
             foreach(StationBoard sb in List.Entries)
             {
-                abfahrtPlandatagrid.Rows.Add(List.Station.Name, List.Station.Name, sb.Stop.Departure);
+                abfahrtPlandatagrid.Rows.Add(List.Station.Name, sb.Stop.Departure);
             }
         }
     }

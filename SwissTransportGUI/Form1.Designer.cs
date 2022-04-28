@@ -35,16 +35,16 @@
             this.verbindungSuchenbtn = new System.Windows.Forms.Button();
             this.stationSuchenbtn = new System.Windows.Forms.Button();
             this.sucheVerbindungbtn = new System.Windows.Forms.Button();
-            this.Verbindungendatagrid = new System.Windows.Forms.DataGridView();
-            this.startStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abreise = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ankunft = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abreise = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Verbindungendatagrid = new System.Windows.Forms.DataGridView();
             this.nachInputcmbx = new System.Windows.Forms.ComboBox();
             this.vonInputcmbx = new System.Windows.Forms.ComboBox();
             this.vonlabel = new System.Windows.Forms.Label();
             this.nachlabel = new System.Windows.Forms.Label();
-            this.gleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Verbindungendatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,8 +104,42 @@
             this.sucheVerbindungbtn.TabIndex = 6;
             this.sucheVerbindungbtn.Text = "Suche Verbindung";
             this.sucheVerbindungbtn.UseVisualStyleBackColor = true;
-            this.sucheVerbindungbtn.TabIndexChanged += new System.EventHandler(this.nachInputcmbx_SelectedIndexChanged);
-            this.sucheVerbindungbtn.Click += new System.EventHandler(this.sucheVerbindungbtn_Click);
+         
+            // 
+            // gleis
+            // 
+            this.gleis.HeaderText = "Gleis";
+            this.gleis.MinimumWidth = 8;
+            this.gleis.Name = "gleis";
+            this.gleis.Width = 150;
+            // 
+            // ankunft
+            // 
+            this.ankunft.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ankunft.HeaderText = "Ankunft";
+            this.ankunft.MinimumWidth = 8;
+            this.ankunft.Name = "ankunft";
+            // 
+            // abreise
+            // 
+            this.abreise.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.abreise.HeaderText = "Abreise";
+            this.abreise.MinimumWidth = 8;
+            this.abreise.Name = "abreise";
+            // 
+            // endStation
+            // 
+            this.endStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.endStation.HeaderText = "Endstation";
+            this.endStation.MinimumWidth = 8;
+            this.endStation.Name = "endStation";
+            // 
+            // startStation
+            // 
+            this.startStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.startStation.HeaderText = "Startstation";
+            this.startStation.MinimumWidth = 8;
+            this.startStation.Name = "startStation";
             // 
             // Verbindungendatagrid
             // 
@@ -124,34 +158,6 @@
             this.Verbindungendatagrid.Size = new System.Drawing.Size(826, 272);
             this.Verbindungendatagrid.TabIndex = 11;
             // 
-            // startStation
-            // 
-            this.startStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.startStation.HeaderText = "Startstation";
-            this.startStation.MinimumWidth = 8;
-            this.startStation.Name = "startStation";
-            // 
-            // endStation
-            // 
-            this.endStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.endStation.HeaderText = "Endstation";
-            this.endStation.MinimumWidth = 8;
-            this.endStation.Name = "endStation";
-            // 
-            // abreise
-            // 
-            this.abreise.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.abreise.HeaderText = "Abreise";
-            this.abreise.MinimumWidth = 8;
-            this.abreise.Name = "abreise";
-            // 
-            // ankunft
-            // 
-            this.ankunft.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ankunft.HeaderText = "Ankunft";
-            this.ankunft.MinimumWidth = 8;
-            this.ankunft.Name = "ankunft";
-            // 
             // nachInputcmbx
             // 
             this.nachInputcmbx.FormattingEnabled = true;
@@ -159,8 +165,7 @@
             this.nachInputcmbx.Name = "nachInputcmbx";
             this.nachInputcmbx.Size = new System.Drawing.Size(254, 33);
             this.nachInputcmbx.TabIndex = 5;
-            this.nachInputcmbx.SelectedIndexChanged += new System.EventHandler(this.nachInputcmbx_SelectedIndexChanged);
-            this.nachInputcmbx.TabIndexChanged += new System.EventHandler(this.sucheVerbindungbtn_Click);
+        
             // 
             // vonInputcmbx
             // 
@@ -169,8 +174,7 @@
             this.vonInputcmbx.Name = "vonInputcmbx";
             this.vonInputcmbx.Size = new System.Drawing.Size(254, 33);
             this.vonInputcmbx.TabIndex = 4;
-            this.vonInputcmbx.SelectedIndexChanged += new System.EventHandler(this.vonInputcmbx_SelectedIndexChanged);
-            this.vonInputcmbx.TabIndexChanged += new System.EventHandler(this.nachInputcmbx_SelectedIndexChanged);
+      
             // 
             // vonlabel
             // 
@@ -190,13 +194,6 @@
             this.nachlabel.TabIndex = 13;
             this.nachlabel.Text = "Nach:";
             // 
-            // gleis
-            // 
-            this.gleis.HeaderText = "Gleis";
-            this.gleis.MinimumWidth = 8;
-            this.gleis.Name = "gleis";
-            this.gleis.Width = 150;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -214,7 +211,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "ÖV-App";
-            this.Load += new System.EventHandler(this.Form1_Load);
+     
             ((System.ComponentModel.ISupportInitialize)(this.Verbindungendatagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,15 +225,15 @@
         private Button verbindungSuchenbtn;
         private Button stationSuchenbtn;
         private Button sucheVerbindungbtn;
-        private DataGridView Verbindungendatagrid;
-        private DataGridViewTextBoxColumn startStation;
-        private DataGridViewTextBoxColumn endStation;
-        private DataGridViewTextBoxColumn abreise;
+        private DataGridViewTextBoxColumn gleis;
         private DataGridViewTextBoxColumn ankunft;
+        private DataGridViewTextBoxColumn abreise;
+        private DataGridViewTextBoxColumn endStation;
+        private DataGridViewTextBoxColumn startStation;
+        private DataGridView Verbindungendatagrid;
         private ComboBox nachInputcmbx;
         private ComboBox vonInputcmbx;
         private Label vonlabel;
         private Label nachlabel;
-        private DataGridViewTextBoxColumn gleis;
     }
 }
