@@ -71,7 +71,10 @@
             this.Controls.Add(this.abfahrtsplanButton);
             this.Controls.Add(this.stationSuchenButton);
             this.Controls.Add(this.verbindungSuchenButton);
+            this.MaximumSize = new System.Drawing.Size(822, 800);
+            this.MinimumSize = new System.Drawing.Size(822, 800);
             this.Name = "menueForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
 

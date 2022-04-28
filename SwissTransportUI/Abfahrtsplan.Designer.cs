@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.abfahrtsPlanDatagrid = new System.Windows.Forms.DataGridView();
-            this.ortInputButton = new System.Windows.Forms.ComboBox();
-            this.abfahrtsPlanAnzButton = new System.Windows.Forms.Button();
-            this.ortLabel = new System.Windows.Forms.Label();
             this.startStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abreise = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ortInputButton = new System.Windows.Forms.ComboBox();
+            this.abfahrtsPlanAnzButton = new System.Windows.Forms.Button();
+            this.ortLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.abfahrtsPlanDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +51,28 @@
             this.abfahrtsPlanDatagrid.RowHeadersWidth = 62;
             this.abfahrtsPlanDatagrid.RowTemplate.Height = 33;
             this.abfahrtsPlanDatagrid.Size = new System.Drawing.Size(851, 225);
-            this.abfahrtsPlanDatagrid.TabIndex = 4;
+            this.abfahrtsPlanDatagrid.TabIndex = 7;
+            // 
+            // startStation
+            // 
+            this.startStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.startStation.HeaderText = "Startstation";
+            this.startStation.MinimumWidth = 8;
+            this.startStation.Name = "startStation";
+            // 
+            // endStation
+            // 
+            this.endStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.endStation.HeaderText = "Endstation";
+            this.endStation.MinimumWidth = 8;
+            this.endStation.Name = "endStation";
+            // 
+            // abreise
+            // 
+            this.abreise.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.abreise.HeaderText = "Abreise";
+            this.abreise.MinimumWidth = 8;
+            this.abreise.Name = "abreise";
             // 
             // ortInputButton
             // 
@@ -81,27 +102,6 @@
             this.ortLabel.TabIndex = 7;
             this.ortLabel.Text = "Ortsname:";
             // 
-            // startStation
-            // 
-            this.startStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.startStation.HeaderText = "Startstation";
-            this.startStation.MinimumWidth = 8;
-            this.startStation.Name = "startStation";
-            // 
-            // endStation
-            // 
-            this.endStation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.endStation.HeaderText = "Endstation";
-            this.endStation.MinimumWidth = 8;
-            this.endStation.Name = "endStation";
-            // 
-            // abreise
-            // 
-            this.abreise.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.abreise.HeaderText = "Abreise";
-            this.abreise.MinimumWidth = 8;
-            this.abreise.Name = "abreise";
-            // 
             // Abfahrtsplan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -111,7 +111,10 @@
             this.Controls.Add(this.abfahrtsPlanAnzButton);
             this.Controls.Add(this.ortInputButton);
             this.Controls.Add(this.abfahrtsPlanDatagrid);
+            this.MaximumSize = new System.Drawing.Size(929, 609);
+            this.MinimumSize = new System.Drawing.Size(929, 609);
             this.Name = "Abfahrtsplan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Abfahrtsplan";
             ((System.ComponentModel.ISupportInitialize)(this.abfahrtsPlanDatagrid)).EndInit();
             this.ResumeLayout(false);
