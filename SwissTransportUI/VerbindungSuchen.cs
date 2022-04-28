@@ -23,6 +23,33 @@ namespace SwissTransportUI
 
         private void sucheVerbindungButton_Click(object sender, EventArgs e)
         {
+
+
+            try
+            {
+                var station = transport.GetStations(vonInputcmbx.Text);
+
+                List<string> list = new List<string>();
+
+                foreach (var stat in station.StationList)
+                {
+                    list.Add(stat.Name.ToString());
+                }
+
+                foreach (var k in list)
+                {
+                    vonInputcmbx.Items.Add(k.ToString());
+                    nachInputcmbx.Items.Add(k.ToString());
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hallo");
+            }
+
+
             List<Connection> List = transport.GetConnections(vonInputcmbx.Text,nachInputcmbx.Text).ConnectionList;
             
            
@@ -42,12 +69,16 @@ namespace SwissTransportUI
             {
                 MessageBox.Show("h");
             }
-                
-
-               
 
             
-            
+
+
+        }
+
+        private void vonInputcmbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+           
         }
     }
 }

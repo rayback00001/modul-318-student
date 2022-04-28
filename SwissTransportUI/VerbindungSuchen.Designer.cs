@@ -39,6 +39,7 @@
             this.gleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vonLabel = new System.Windows.Forms.Label();
             this.nachLabel = new System.Windows.Forms.Label();
+            this.verbindungSuchenLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.verbindungSucheDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,9 +48,9 @@
             this.sucheVerbindungButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(78)))), ((int)(((byte)(142)))));
             this.sucheVerbindungButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sucheVerbindungButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.sucheVerbindungButton.Location = new System.Drawing.Point(645, 153);
+            this.sucheVerbindungButton.Location = new System.Drawing.Point(626, 185);
             this.sucheVerbindungButton.Name = "sucheVerbindungButton";
-            this.sucheVerbindungButton.Size = new System.Drawing.Size(173, 63);
+            this.sucheVerbindungButton.Size = new System.Drawing.Size(194, 68);
             this.sucheVerbindungButton.TabIndex = 3;
             this.sucheVerbindungButton.Text = "Suche Verbindung";
             this.sucheVerbindungButton.UseVisualStyleBackColor = false;
@@ -57,25 +58,25 @@
             // 
             // vonInputcmbx
             // 
-            this.vonInputcmbx.AllowDrop = true;
             this.vonInputcmbx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.vonInputcmbx.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.vonInputcmbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.vonInputcmbx.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.vonInputcmbx.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.vonInputcmbx.FormattingEnabled = true;
             this.vonInputcmbx.ItemHeight = 50;
-            this.vonInputcmbx.Location = new System.Drawing.Point(120, 82);
+            this.vonInputcmbx.Location = new System.Drawing.Point(122, 123);
             this.vonInputcmbx.Name = "vonInputcmbx";
             this.vonInputcmbx.Size = new System.Drawing.Size(278, 56);
             this.vonInputcmbx.TabIndex = 1;
+            this.vonInputcmbx.SelectedIndexChanged += new System.EventHandler(this.vonInputcmbx_SelectedIndexChanged);
             // 
             // nachInputcmbx
             // 
             this.nachInputcmbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.nachInputcmbx.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nachInputcmbx.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nachInputcmbx.FormattingEnabled = true;
             this.nachInputcmbx.ItemHeight = 50;
-            this.nachInputcmbx.Location = new System.Drawing.Point(540, 82);
+            this.nachInputcmbx.Location = new System.Drawing.Point(542, 123);
             this.nachInputcmbx.Name = "nachInputcmbx";
             this.nachInputcmbx.Size = new System.Drawing.Size(278, 56);
             this.nachInputcmbx.TabIndex = 2;
@@ -89,12 +90,12 @@
             this.abreise,
             this.ankunft,
             this.gleis});
-            this.verbindungSucheDatagrid.Location = new System.Drawing.Point(-1, 284);
+            this.verbindungSucheDatagrid.Location = new System.Drawing.Point(1, 284);
             this.verbindungSucheDatagrid.Name = "verbindungSucheDatagrid";
             this.verbindungSucheDatagrid.RowHeadersVisible = false;
             this.verbindungSucheDatagrid.RowHeadersWidth = 62;
             this.verbindungSucheDatagrid.RowTemplate.Height = 33;
-            this.verbindungSucheDatagrid.Size = new System.Drawing.Size(909, 270);
+            this.verbindungSucheDatagrid.Size = new System.Drawing.Size(906, 270);
             this.verbindungSucheDatagrid.TabIndex = 4;
             // 
             // startStation
@@ -136,7 +137,8 @@
             // 
             this.vonLabel.AutoSize = true;
             this.vonLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.vonLabel.Location = new System.Drawing.Point(49, 90);
+            this.vonLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.vonLabel.Location = new System.Drawing.Point(51, 131);
             this.vonLabel.Name = "vonLabel";
             this.vonLabel.Size = new System.Drawing.Size(65, 32);
             this.vonLabel.TabIndex = 4;
@@ -146,11 +148,23 @@
             // 
             this.nachLabel.AutoSize = true;
             this.nachLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.nachLabel.Location = new System.Drawing.Point(455, 90);
+            this.nachLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.nachLabel.Location = new System.Drawing.Point(457, 131);
             this.nachLabel.Name = "nachLabel";
             this.nachLabel.Size = new System.Drawing.Size(79, 32);
             this.nachLabel.TabIndex = 5;
             this.nachLabel.Text = "Nach:";
+            // 
+            // verbindungSuchenLabel
+            // 
+            this.verbindungSuchenLabel.AutoSize = true;
+            this.verbindungSuchenLabel.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.verbindungSuchenLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(78)))), ((int)(((byte)(142)))));
+            this.verbindungSuchenLabel.Location = new System.Drawing.Point(44, 28);
+            this.verbindungSuchenLabel.Name = "verbindungSuchenLabel";
+            this.verbindungSuchenLabel.Size = new System.Drawing.Size(356, 48);
+            this.verbindungSuchenLabel.TabIndex = 6;
+            this.verbindungSuchenLabel.Text = "Verbindung suchen";
             // 
             // VerbindungSuchen
             // 
@@ -158,6 +172,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(907, 553);
+            this.Controls.Add(this.verbindungSuchenLabel);
             this.Controls.Add(this.nachLabel);
             this.Controls.Add(this.vonLabel);
             this.Controls.Add(this.verbindungSucheDatagrid);
@@ -188,5 +203,6 @@
         private Label vonLabel;
         private Label nachLabel;
         private DataGridViewTextBoxColumn gleis;
+        private Label verbindungSuchenLabel;
     }
 }
