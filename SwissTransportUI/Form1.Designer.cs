@@ -34,11 +34,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.karteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // verbindungSuchenButton
             // 
+            this.verbindungSuchenButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.verbindungSuchenButton.Location = new System.Drawing.Point(12, 552);
             this.verbindungSuchenButton.Name = "verbindungSuchenButton";
             this.verbindungSuchenButton.Size = new System.Drawing.Size(383, 87);
@@ -49,9 +51,10 @@
             // 
             // abfahrtsplanButton
             // 
-            this.abfahrtsplanButton.Location = new System.Drawing.Point(12, 645);
+            this.abfahrtsplanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.abfahrtsplanButton.Location = new System.Drawing.Point(401, 552);
             this.abfahrtsplanButton.Name = "abfahrtsplanButton";
-            this.abfahrtsplanButton.Size = new System.Drawing.Size(776, 87);
+            this.abfahrtsplanButton.Size = new System.Drawing.Size(387, 87);
             this.abfahrtsplanButton.TabIndex = 2;
             this.abfahrtsplanButton.Text = "Abfahrtsplan";
             this.abfahrtsplanButton.UseVisualStyleBackColor = true;
@@ -87,12 +90,24 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // karteButton
+            // 
+            this.karteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.karteButton.Location = new System.Drawing.Point(12, 645);
+            this.karteButton.Name = "karteButton";
+            this.karteButton.Size = new System.Drawing.Size(776, 87);
+            this.karteButton.TabIndex = 6;
+            this.karteButton.Text = "Karte";
+            this.karteButton.UseVisualStyleBackColor = true;
+            this.karteButton.Click += new System.EventHandler(this.karteButton_Click);
+            // 
             // menueForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(800, 744);
+            this.Controls.Add(this.karteButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -117,5 +132,6 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Button button1;
+        private Button karteButton;
     }
 }

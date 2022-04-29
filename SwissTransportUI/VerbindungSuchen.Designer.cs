@@ -80,6 +80,7 @@
             this.nachInputcmbx.Name = "nachInputcmbx";
             this.nachInputcmbx.Size = new System.Drawing.Size(278, 53);
             this.nachInputcmbx.TabIndex = 2;
+          
             this.nachInputcmbx.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nachInputcmbx_KeyUp);
             // 
             // verbindungSucheDatagrid
