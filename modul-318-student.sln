@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwissTransport", "src\Swiss
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwissTransportTest", "tests\SwissTransportTest\SwissTransportTest.csproj", "{959C6E54-5B1C-40F5-938A-C57B17451421}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwissTransportGUI", "SwissTransportGUI\SwissTransportGUI.csproj", "{0DCA3542-827E-44E8-B25A-C8FED0EE17F4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissTransportUI", "SwissTransportUI\SwissTransportUI.csproj", "{EE4E6B61-CF0B-4EEF-ACB1-395D8696F2BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwissTransportUI", "SwissTransportUI\SwissTransportUI.csproj", "{EE4E6B61-CF0B-4EEF-ACB1-395D8696F2BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{959C6E54-5B1C-40F5-938A-C57B17451421}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{959C6E54-5B1C-40F5-938A-C57B17451421}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{959C6E54-5B1C-40F5-938A-C57B17451421}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0DCA3542-827E-44E8-B25A-C8FED0EE17F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DCA3542-827E-44E8-B25A-C8FED0EE17F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DCA3542-827E-44E8-B25A-C8FED0EE17F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DCA3542-827E-44E8-B25A-C8FED0EE17F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE4E6B61-CF0B-4EEF-ACB1-395D8696F2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE4E6B61-CF0B-4EEF-ACB1-395D8696F2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE4E6B61-CF0B-4EEF-ACB1-395D8696F2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
