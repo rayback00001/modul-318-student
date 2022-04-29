@@ -14,26 +14,33 @@ namespace SwissTransportUI
 
         private void verbindungSuchenButton_Click(object sender, EventArgs e)
         {
-           
-            VerbindungSuchen vs = new VerbindungSuchen();
-            vs.Show();
-            this.Hide();
-            
-            
-        }
 
-      
+            this.Hide();
+            VerbindungSuchen vs = new VerbindungSuchen();
+            vs.ShowDialog();
+            vs = null;
+            this.Show();
+                        
+        }
 
         private void abfahrtsplanButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Abfahrtsplan ap = new Abfahrtsplan();
-            ap.Show();
+            ap.ShowDialog();
+            ap = null;
+            this.Show();
         }
 
         private void karteButton_Click(object sender, EventArgs e)
         {
-            karteForms kf = new karteForms();
-            kf.Show();
-        }s
+            this.Hide();
+            karteForms kp = new karteForms();
+            kp.ShowDialog();
+            kp = null;
+            this.Show();
+        }
+
+        
     }
 }

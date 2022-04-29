@@ -30,10 +30,10 @@ namespace SwissTransportUI
             {
                
                 
-                    foreach (StationBoard sb in List.Entries)
-                    {
-                        abfahrtsPlanDatagrid.Rows.Add(List.Station.Name, sb.To, string.Format("{0:HH:mm}", sb.Stop.Departure));
-                    }
+                foreach (StationBoard sb in List.Entries)
+                {
+                    abfahrtsPlanDatagrid.Rows.Add(List.Station.Name, sb.To, string.Format("{0:HH:mm}", sb.Stop.Departure));
+                }
                 
 
                
@@ -42,12 +42,7 @@ namespace SwissTransportUI
             {
                 MessageBox.Show(err.Message, "Fehlermeldung", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-
-
-
-
-
+       
 
         }
 
@@ -58,7 +53,7 @@ namespace SwissTransportUI
 
         private void ortInputButton_KeyUp(object sender, KeyEventArgs e)
         {
-            if(ortInputButton.Text.Length == 3)
+            if(ortInputButton.Text.Length == 1)
             {
                 ortInputButton.Items.Clear();
 

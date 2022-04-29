@@ -22,12 +22,7 @@ namespace SwissTransportUI
         }
 
 
-        private void zurueckButton_Click(object sender, EventArgs e)
-        {
-            menueForms mf = new menueForms();
-            mf.Show();
-            this.Close();
-        }
+  
 
         private void sucheVerbindungButton_Click(object sender, EventArgs e)
         {
@@ -43,7 +38,6 @@ namespace SwissTransportUI
                     
                     verbindungSucheDatagrid.Rows.Add(connection.From.Station.Name, connection.To.Station.Name, string.Format("{0:HH:mm}",
                     connection.From.Departure), string.Format("{0:HH:mm}", connection.To.Arrival), connection.From.Platform);
-                    
                  
                 }
 
@@ -54,6 +48,10 @@ namespace SwissTransportUI
 
             {
                 MessageBox.Show("Ortsnamen vollständig und korrekt eingeben!");
+            }
+            catch(HttpRequestException ex)
+            {
+                MessageBox.Show("Hallo", +ex.Message);
             }
             catch(Exception err)
             {

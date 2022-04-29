@@ -42,7 +42,6 @@
             this.vonLabel = new System.Windows.Forms.Label();
             this.nachLabel = new System.Windows.Forms.Label();
             this.verbindungSuchenLabel = new System.Windows.Forms.Label();
-            this.zurueckButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.verbindungSucheDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +79,6 @@
             this.nachInputcmbx.Name = "nachInputcmbx";
             this.nachInputcmbx.Size = new System.Drawing.Size(278, 53);
             this.nachInputcmbx.TabIndex = 2;
-          
             this.nachInputcmbx.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nachInputcmbx_KeyUp);
             // 
             // verbindungSucheDatagrid
@@ -188,18 +186,6 @@
             this.verbindungSuchenLabel.TabIndex = 6;
             this.verbindungSuchenLabel.Text = "Verbindung Suchen";
             // 
-            // zurueckButton
-            // 
-            this.zurueckButton.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.zurueckButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zurueckButton.Location = new System.Drawing.Point(674, 12);
-            this.zurueckButton.Name = "zurueckButton";
-            this.zurueckButton.Size = new System.Drawing.Size(146, 38);
-            this.zurueckButton.TabIndex = 7;
-            this.zurueckButton.Text = "Menü";
-            this.zurueckButton.UseVisualStyleBackColor = false;
-            this.zurueckButton.Click += new System.EventHandler(this.zurueckButton_Click);
-            // 
             // VerbindungSuchen
             // 
             this.AllowDrop = true;
@@ -207,7 +193,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(907, 553);
-            this.Controls.Add(this.zurueckButton);
             this.Controls.Add(this.verbindungSuchenLabel);
             this.Controls.Add(this.nachLabel);
             this.Controls.Add(this.vonLabel);
@@ -240,6 +225,5 @@
         private DataGridViewTextBoxColumn abreise;
         private DataGridViewTextBoxColumn ankunft;
         private DataGridViewTextBoxColumn gleis;
-        private Button zurueckButton;
     }
 }
