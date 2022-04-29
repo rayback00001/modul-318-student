@@ -25,19 +25,21 @@ namespace SwissTransportUI
 
         private void abfahrtsplanButton_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
             Abfahrtsplan ap = new Abfahrtsplan();
             ap.ShowDialog();
             ap = null;
             this.Show();
+            
         }
 
         private void karteButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            karteForms kp = new karteForms();
-            kp.ShowDialog();
-            kp = null;
+            karteForms kf = new karteForms();
+            kf.ShowDialog();
+            kf = null;
             this.Show();
         }
 

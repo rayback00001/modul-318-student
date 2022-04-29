@@ -44,14 +44,16 @@ namespace SwissTransportUI
                
             }
             
-            catch(ArgumentNullException)
+            catch(System.ArgumentNullException)
 
             {
                 MessageBox.Show("Ortsnamen vollständig und korrekt eingeben!");
             }
-            catch(HttpRequestException ex)
+            catch(HttpRequestException)
             {
-                MessageBox.Show("Hallo", +ex.Message);
+                HttpResponseMessage response = new HttpResponseMessage();
+                response.StatusCode = System.Net.HttpStatusCode.OK;
+
             }
             catch(Exception err)
             {
@@ -63,9 +65,13 @@ namespace SwissTransportUI
 
         private void vonInputcmbx_KeyUp(object sender, KeyEventArgs e)
         {
+            try {
 
-                if(vonInputcmbx.Text.Length == 3)
+               
+              
+                if (vonInputcmbx.Text.Length >= 3)
                 {
+                  
                     vonInputcmbx.Items.Clear();
 
                     string VonInput = vonInputcmbx.Text;
@@ -75,25 +81,33 @@ namespace SwissTransportUI
                     List<string> liste = new List<string>();
 
                     foreach (var Station in Stationen.StationList)
-                     {
-                         liste.Add(Station.Name);
+                    {
+                        liste.Add(Station.Name);
 
-                     }
-                     foreach (var i in liste)
-                     {
+                    }
+                    foreach (var i in liste)
+                    {
                         vonInputcmbx.Items.Add(i);
-                     }
+                    }
 
+                    vonInputcmbx.SelectionStart = vonInputcmbx.Text.Length + 1;
                     vonInputcmbx.DroppedDown = true;
 
+                }
             }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message, "Fehlermeldung", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
 
         }
 
         private void nachInputcmbx_KeyUp(object sender, KeyEventArgs e)
         {
-            if (nachInputcmbx.Text.Length == 3)
+            if (nachInputcmbx.Text.Length >= 3)
             {
+               
                 nachInputcmbx.Items.Clear();
 
                 string NachInput = nachInputcmbx.Text;
@@ -111,7 +125,7 @@ namespace SwissTransportUI
                 {
                     nachInputcmbx.Items.Add(i);
                 }
-
+                nachInputcmbx.SelectionStart = nachInputcmbx.Text.Length + 1;
                 nachInputcmbx.DroppedDown = true;
             }
         }

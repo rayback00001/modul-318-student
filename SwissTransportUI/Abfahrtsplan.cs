@@ -55,6 +55,7 @@ namespace SwissTransportUI
         {
             if(ortInputButton.Text.Length == 1)
             {
+                ortInputButton.DroppedDown = true;
                 ortInputButton.Items.Clear();
 
                 string NachInput = ortInputButton.Text;
@@ -73,7 +74,7 @@ namespace SwissTransportUI
                     ortInputButton.Items.Add(i);
                 }
 
-                ortInputButton.DroppedDown = true;
+               
             }
         }
     }
