@@ -105,29 +105,39 @@ namespace SwissTransportUI
 
         private void nachInputcmbx_KeyUp(object sender, KeyEventArgs e)
         {
-            if (nachInputcmbx.Text.Length >= 3)
+
+            try
             {
-               
-                nachInputcmbx.Items.Clear();
-
-                string NachInput = nachInputcmbx.Text;
-
-                var Stationen = transport.GetStations(NachInput);
-
-                List<string> liste = new List<string>();
-
-                foreach (var Station in Stationen.StationList)
+                if (nachInputcmbx.Text.Length >= 3)
                 {
-                    liste.Add(Station.Name);
 
+                    nachInputcmbx.Items.Clear();
+
+                    string NachInput = nachInputcmbx.Text;
+
+                    var Stationen = transport.GetStations(NachInput);
+
+                    List<string> liste = new List<string>();
+
+                    foreach (var Station in Stationen.StationList)
+                    {
+                        liste.Add(Station.Name);
+
+                    }
+                    foreach (var i in liste)
+                    {
+                        nachInputcmbx.Items.Add(i);
+                    }
+                    nachInputcmbx.SelectionStart = nachInputcmbx.Text.Length + 1;
+                    nachInputcmbx.DroppedDown = true;
                 }
-                foreach (var i in liste)
-                {
-                    nachInputcmbx.Items.Add(i);
-                }
-                nachInputcmbx.SelectionStart = nachInputcmbx.Text.Length + 1;
-                nachInputcmbx.DroppedDown = true;
             }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Fehlermeldung", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
 
         private void vonInputcmbx_SelectedIndexChanged(object sender, EventArgs e)
