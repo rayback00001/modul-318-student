@@ -34,6 +34,7 @@
             this.abfahrtsplanButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,12 +89,23 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "öV Minus";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(587, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 34);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+           
+            // 
             // menueForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(800, 744);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.abfahrtsplanButton);
@@ -117,5 +129,6 @@
         private Button abfahrtsplanButton;
         private PictureBox pictureBox1;
         private Label label1;
+        private Button button1;
     }
 }

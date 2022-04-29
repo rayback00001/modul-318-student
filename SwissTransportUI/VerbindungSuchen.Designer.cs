@@ -43,6 +43,7 @@
             this.nachLabel = new System.Windows.Forms.Label();
             this.verbindungSuchenLabel = new System.Windows.Forms.Label();
             this.zurueckButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.verbindungSucheDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,8 +62,6 @@
             // 
             // vonInputcmbx
             // 
-            this.vonInputcmbx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.vonInputcmbx.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.vonInputcmbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.vonInputcmbx.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.vonInputcmbx.FormattingEnabled = true;
@@ -71,6 +70,7 @@
             this.vonInputcmbx.Name = "vonInputcmbx";
             this.vonInputcmbx.Size = new System.Drawing.Size(278, 56);
             this.vonInputcmbx.TabIndex = 1;
+            this.vonInputcmbx.KeyUp += new System.Windows.Forms.KeyEventHandler(this.vonInputcmbx_KeyUp);
             // 
             // nachInputcmbx
             // 
@@ -82,6 +82,7 @@
             this.nachInputcmbx.Name = "nachInputcmbx";
             this.nachInputcmbx.Size = new System.Drawing.Size(278, 56);
             this.nachInputcmbx.TabIndex = 2;
+            this.nachInputcmbx.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nachInputcmbx_KeyUp);
             // 
             // verbindungSucheDatagrid
             // 
@@ -105,12 +106,12 @@
             this.gleis});
             this.verbindungSucheDatagrid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.verbindungSucheDatagrid.GridColor = System.Drawing.SystemColors.GrayText;
-            this.verbindungSucheDatagrid.Location = new System.Drawing.Point(-2, 314);
+            this.verbindungSucheDatagrid.Location = new System.Drawing.Point(-2, 272);
             this.verbindungSucheDatagrid.Name = "verbindungSucheDatagrid";
             this.verbindungSucheDatagrid.RowHeadersVisible = false;
             this.verbindungSucheDatagrid.RowHeadersWidth = 62;
             this.verbindungSucheDatagrid.RowTemplate.Height = 33;
-            this.verbindungSucheDatagrid.Size = new System.Drawing.Size(914, 242);
+            this.verbindungSucheDatagrid.Size = new System.Drawing.Size(914, 288);
             this.verbindungSucheDatagrid.TabIndex = 4;
             // 
             // startStation
@@ -200,12 +201,23 @@
             this.zurueckButton.UseVisualStyleBackColor = false;
             this.zurueckButton.Click += new System.EventHandler(this.zurueckButton_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(506, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(182, 33);
+            this.comboBox1.TabIndex = 8;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // VerbindungSuchen
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(907, 553);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.zurueckButton);
             this.Controls.Add(this.verbindungSuchenLabel);
             this.Controls.Add(this.nachLabel);
@@ -240,5 +252,6 @@
         private DataGridViewTextBoxColumn ankunft;
         private DataGridViewTextBoxColumn gleis;
         private Button zurueckButton;
+        private ComboBox comboBox1;
     }
 }

@@ -24,7 +24,8 @@ namespace SwissTransportUI
 
         private void stationSuchenButton_Click(object sender, EventArgs e)
         {
-
+            StationSuchen ss = new StationSuchen();
+            ss.Show();
         }
 
         private void abfahrtsplanButton_Click(object sender, EventArgs e)
@@ -32,5 +33,7 @@ namespace SwissTransportUI
             Abfahrtsplan ap = new Abfahrtsplan();
             ap.Show();
         }
+
+        
     }
 }

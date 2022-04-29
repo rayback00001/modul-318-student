@@ -21,39 +21,17 @@ namespace SwissTransportUI
             InitializeComponent();
         }
 
+
+        private void zurueckButton_Click(object sender, EventArgs e)
+        {
+            menueForms mf = new menueForms();
+            mf.Show();
+            this.Close();
+        }
+
         private void sucheVerbindungButton_Click(object sender, EventArgs e)
         {
 
-            /*
-            try
-            {
-                var station = transport.GetStations(vonInputcmbx.Text);
-
-                List<string> list = new List<string>();
-
-                foreach (var stat in station.StationList)
-                {
-                    list.Add(stat.Name.ToString());
-                }
-
-                foreach (var k in list)
-                {
-                    vonInputcmbx.Items.Add(k.ToString());
-                    nachInputcmbx.Items.Add(k.ToString());
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hallo");
-            }
-
-            */
-
-
-
-           
             try
             {
 
@@ -64,10 +42,9 @@ namespace SwissTransportUI
                 {
                     
                     verbindungSucheDatagrid.Rows.Add(connection.From.Station.Name, connection.To.Station.Name, string.Format("{0:HH:mm}",
-                    connection.From.Departure), string.Format("{0:HH:mm}", connection.To.Arrival), connection.To.Platform);
+                    connection.From.Departure), string.Format("{0:HH:mm}", connection.To.Arrival), connection.From.Platform);
                     
-                   
-
+                 
                 }
 
                
@@ -82,18 +59,64 @@ namespace SwissTransportUI
             {
                 MessageBox.Show(err.Message, "Fehlermeldung", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
-
-
         }
 
-        private void zurueckButton_Click(object sender, EventArgs e)
+      
+
+        private void vonInputcmbx_KeyUp(object sender, KeyEventArgs e)
         {
-            menueForms mf = new menueForms();
-            mf.Show();
-            this.Close();
+
+                if(vonInputcmbx.Text.Length == 3)
+                {
+                    vonInputcmbx.Items.Clear();
+
+                    string VonInput = vonInputcmbx.Text;
+
+                    var Stationen = transport.GetStations(VonInput);
+
+                    List<string> list = new List<string>();
+
+                    foreach (var Station in Stationen.StationList)
+                     {
+                         list.Add(Station.Name);
+
+                     }
+                     foreach (var i in list)
+                     {
+                        vonInputcmbx.Items.Add(i);
+                     }
+                
+
+                }
+
         }
+
+        private void nachInputcmbx_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (nachInputcmbx.Text.Length == 4)
+            {
+                nachInputcmbx.Items.Clear();
+
+                string NachInput = nachInputcmbx.Text;
+
+                var Stationen = transport.GetStations(NachInput);
+
+                List<string> list = new List<string>();
+
+                foreach (var Station in Stationen.StationList)
+                {
+                    list.Add(Station.Name);
+
+                }
+                foreach (var i in list)
+                {
+                    nachInputcmbx.Items.Add(i);
+                }
+
+
+            }
+        }
+
+        
     }
 }
