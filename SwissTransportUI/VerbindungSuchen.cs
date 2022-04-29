@@ -74,26 +74,27 @@ namespace SwissTransportUI
 
                     var Stationen = transport.GetStations(VonInput);
 
-                    List<string> list = new List<string>();
+                    List<string> liste = new List<string>();
 
                     foreach (var Station in Stationen.StationList)
                      {
-                         list.Add(Station.Name);
+                         liste.Add(Station.Name);
 
                      }
-                     foreach (var i in list)
+                     foreach (var i in liste)
                      {
                         vonInputcmbx.Items.Add(i);
                      }
-                
 
-                }
+                    vonInputcmbx.DroppedDown = true;
+
+            }
 
         }
 
         private void nachInputcmbx_KeyUp(object sender, KeyEventArgs e)
         {
-            if (nachInputcmbx.Text.Length == 4)
+            if (nachInputcmbx.Text.Length == 3)
             {
                 nachInputcmbx.Items.Clear();
 
@@ -101,22 +102,25 @@ namespace SwissTransportUI
 
                 var Stationen = transport.GetStations(NachInput);
 
-                List<string> list = new List<string>();
+                List<string> liste = new List<string>();
 
                 foreach (var Station in Stationen.StationList)
                 {
-                    list.Add(Station.Name);
+                    liste.Add(Station.Name);
 
                 }
-                foreach (var i in list)
+                foreach (var i in liste)
                 {
                     nachInputcmbx.Items.Add(i);
                 }
 
-
+                nachInputcmbx.DroppedDown = true;
             }
         }
 
-        
+        private void vonInputcmbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

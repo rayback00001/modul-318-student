@@ -55,5 +55,31 @@ namespace SwissTransportUI
         {
           
         }
+
+        private void ortInputButton_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(ortInputButton.Text.Length == 3)
+            {
+                ortInputButton.Items.Clear();
+
+                string NachInput = ortInputButton.Text;
+
+                var Stationen = transport.GetStations(NachInput);
+
+                List<string> liste = new List<string>();
+
+                foreach (var Station in Stationen.StationList)
+                {
+                    liste.Add(Station.Name);
+
+                }
+                foreach (var i in liste)
+                {
+                    ortInputButton.Items.Add(i);
+                }
+
+                ortInputButton.DroppedDown = true;
+            }
+        }
     }
 }

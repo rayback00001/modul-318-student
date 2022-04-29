@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menueForms));
             this.verbindungSuchenButton = new System.Windows.Forms.Button();
-            this.stationSuchenButton = new System.Windows.Forms.Button();
             this.abfahrtsplanButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,16 +46,6 @@
             this.verbindungSuchenButton.Text = "Verbindung suchen";
             this.verbindungSuchenButton.UseVisualStyleBackColor = true;
             this.verbindungSuchenButton.Click += new System.EventHandler(this.verbindungSuchenButton_Click);
-            // 
-            // stationSuchenButton
-            // 
-            this.stationSuchenButton.Location = new System.Drawing.Point(405, 552);
-            this.stationSuchenButton.Name = "stationSuchenButton";
-            this.stationSuchenButton.Size = new System.Drawing.Size(383, 87);
-            this.stationSuchenButton.TabIndex = 1;
-            this.stationSuchenButton.Text = "Station suchen";
-            this.stationSuchenButton.UseVisualStyleBackColor = true;
-            this.stationSuchenButton.Click += new System.EventHandler(this.stationSuchenButton_Click);
             // 
             // abfahrtsplanButton
             // 
@@ -97,7 +86,6 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-           
             // 
             // menueForms
             // 
@@ -109,7 +97,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.abfahrtsplanButton);
-            this.Controls.Add(this.stationSuchenButton);
             this.Controls.Add(this.verbindungSuchenButton);
             this.MaximumSize = new System.Drawing.Size(822, 800);
             this.MinimumSize = new System.Drawing.Size(822, 800);

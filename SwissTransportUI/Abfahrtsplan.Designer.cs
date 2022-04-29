@@ -88,22 +88,22 @@
             // 
             // ortInputButton
             // 
-            this.ortInputButton.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.ortInputButton.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ortInputButton.FormattingEnabled = true;
-            this.ortInputButton.ItemHeight = 50;
+            this.ortInputButton.ItemHeight = 45;
             this.ortInputButton.Location = new System.Drawing.Point(181, 118);
             this.ortInputButton.Name = "ortInputButton";
-            this.ortInputButton.Size = new System.Drawing.Size(278, 56);
+            this.ortInputButton.Size = new System.Drawing.Size(338, 53);
             this.ortInputButton.TabIndex = 5;
             this.ortInputButton.SelectedIndexChanged += new System.EventHandler(this.ortInputButton_SelectedIndexChanged);
+            this.ortInputButton.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ortInputButton_KeyUp);
             // 
             // abfahrtsPlanAnzButton
             // 
             this.abfahrtsPlanAnzButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(78)))), ((int)(((byte)(142)))));
             this.abfahrtsPlanAnzButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.abfahrtsPlanAnzButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.abfahrtsPlanAnzButton.Location = new System.Drawing.Point(482, 121);
+            this.abfahrtsPlanAnzButton.Location = new System.Drawing.Point(543, 118);
             this.abfahrtsPlanAnzButton.Name = "abfahrtsPlanAnzButton";
             this.abfahrtsPlanAnzButton.Size = new System.Drawing.Size(202, 57);
             this.abfahrtsPlanAnzButton.TabIndex = 6;
