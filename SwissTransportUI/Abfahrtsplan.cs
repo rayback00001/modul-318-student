@@ -53,9 +53,9 @@ namespace SwissTransportUI
 
         private void ortInputButton_KeyUp(object sender, KeyEventArgs e)
         {
-            if(ortInputButton.Text.Length == 1)
+            if(ortInputButton.Text.Length >= 3)
             {
-                ortInputButton.DroppedDown = true;
+                
                 ortInputButton.Items.Clear();
 
                 string NachInput = ortInputButton.Text;
@@ -74,7 +74,7 @@ namespace SwissTransportUI
                     ortInputButton.Items.Add(i);
                 }
 
-               
+                ortInputButton.DroppedDown = true;
             }
         }
     }
